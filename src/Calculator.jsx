@@ -1,20 +1,29 @@
 import { useMemo, useContext } from 'react';
+
 import Calculation from './Calculation';
+
 import styles from './Calculator.module.css';
+
 import { OperandContext } from './context/OperandContext';
 
+/* ================================================================== */
 function Calculator() {
   const { operand } = useContext(OperandContext);
+
   const addOne = useMemo(() => {
     return operand + 1;
   }, [operand]);
 
   const cubed = useMemo(() => {
-    return operand ** 2;
+    // return operand ** 2;
+
+    return operand ** 3;
   }, [operand]);
 
   const multiplyByThree = useMemo(() => {
-    operand * 3;
+    // operand * 3;
+
+    return operand * 3;
   }, [operand]);
 
   const squareRoot = useMemo(() => {
@@ -33,4 +42,5 @@ function Calculator() {
   );
 }
 
+/* ================================================================== */
 export default Calculator;

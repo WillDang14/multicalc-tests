@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { OperandContext } from './context/OperandContext';
 
+/* ================================================================== */
 function Form() {
   const { operand, setOperand } = useContext(OperandContext);
   const [workingOperand, setWorkingOperand] = useState(0);
@@ -15,15 +16,18 @@ function Form() {
       setOperand(parseFloat(workingOperand));
     }
   }
+
   return (
     <form>
       <label htmlFor="value">Calculate with: </label>
+
       <input
         type="number"
         id="value"
         value={workingOperand}
         onChange={(e) => setWorkingOperand(e.target.value)}
       />
+
       <button onClick={handleSubmit} disabled={workingOperand === ''}>
         Submit
       </button>
@@ -31,4 +35,5 @@ function Form() {
   );
 }
 
+/* ================================================================== */
 export default Form;
