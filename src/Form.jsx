@@ -12,6 +12,7 @@ function Form() {
 
   function handleSubmit(e) {
     e.preventDefault();
+
     if (workingOperand != '') {
       setOperand(parseFloat(workingOperand));
     }
